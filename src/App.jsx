@@ -1,11 +1,10 @@
-import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import AllNotesView from './components/AllNotesView';
+import CalendarView from './components/CalenderView';
 import Header from './components/Header';
 import MoodPicker from './components/MoodPicker';
 import WeatherDisplay from './components/WeatherDisplay';
-// import CalendarView from './components/CalendarView';
-import CalendarView from './components/CalenderView';
-import AllNotesView from './components/AllNotesView';
-import axios from 'axios';
 
 
 export default function App() {
@@ -68,11 +67,9 @@ export default function App() {
     localStorage.setItem("entries", JSON.stringify(updatedEntries));
     setCurrentEntry((prev) => ({ ...prev, mood: null, notes: "" }));
   };
-  // ... existing state and logic ...
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      {/* Animated Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 opacity-50"></div>
         <div className="absolute inset-0 animate-pulse-slow">
@@ -80,12 +77,10 @@ export default function App() {
         </div>
       </div>
 
-      {/* Content */}
       <div className="relative z-10">
         <Header date={currentEntry.date} />
         
         <main className="container mx-auto px-4 py-8 max-w-4xl backdrop-blur-sm">
-          {/* View toggle buttons with glassmorphism effect */}
           <div className="flex gap-4 mb-6">
             <button
               onClick={() => setViewMode('calendar')}
@@ -111,12 +106,10 @@ export default function App() {
 
           {viewMode === 'calendar' ? (
             <div className="grid lg:grid-cols-2 gap-8">
-              {/* Weather Card with Glass Effect */}
               <div className="bg-white/30 backdrop-blur-lg rounded-xl p-6 shadow-xl border border-white/20">
                 <WeatherDisplay weather={weather} />
               </div>
 
-              {/* Input Section */}
               <div className="space-y-6">
                 <div className="bg-white/30 backdrop-blur-lg rounded-xl p-6 shadow-xl border border-white/20">
                   <MoodPicker onMoodSelect={mood => 
@@ -141,7 +134,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Calendar */}
               <div className="lg:col-span-2">
                 <CalendarView 
                   entries={entries} 
@@ -158,7 +150,6 @@ export default function App() {
         </main>
       </div>
 
-      {/* Floating Particles Animation */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         {[...Array(15)].map((_, i) => (
           <div

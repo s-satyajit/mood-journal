@@ -1,11 +1,11 @@
-import { 
-    format,
-    startOfMonth,
-    endOfMonth,
+import {
     eachDayOfInterval,
+    endOfMonth,
+    format,
+    isSameDay,
     isSameMonth,
-    isSameDay
-  } from 'date-fns';
+    startOfMonth
+} from 'date-fns';
   
   export default function CalendarView({ entries, onDateSelect, selectedDate }) {
     const currentDate = new Date();

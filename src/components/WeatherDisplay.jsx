@@ -1,5 +1,5 @@
 import React from 'react';
-import { WiDaySunny, WiRain, WiCloudy } from 'react-icons/wi';
+import { WiCloudy, WiDaySunny, WiRain } from 'react-icons/wi';
 
 export default function WeatherDisplay({ weather }) {
   const getWeatherIcon = (condition) => {
