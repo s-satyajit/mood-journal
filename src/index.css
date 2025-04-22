@@ -7,3 +7,24 @@ button {
 button:active {
   transform: scale(0.95);
 }
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(-20px) translateX(10px); }
+  50% { transform: translateY(10px) translateX(-10px); }
+  75% { transform: translateY(-10px) translateX(10px); }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 15s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 20s ease-in-out infinite;
+}
+

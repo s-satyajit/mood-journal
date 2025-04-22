@@ -1,11 +1,10 @@
-// components/CalendarView.jsx
 import { 
-    format, 
-    startOfMonth, 
-    endOfMonth, 
-    eachDayOfInterval, 
+    format,
+    startOfMonth,
+    endOfMonth,
+    eachDayOfInterval,
     isSameMonth,
-    isSameDay 
+    isSameDay
   } from 'date-fns';
   
   export default function CalendarView({ entries, onDateSelect, selectedDate }) {

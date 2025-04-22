@@ -24,7 +24,7 @@ export default function MoodPicker({ onMoodSelect }) {
           <button
             key={mood.id}
             onClick={() => handleMoodClick(mood)}
-            className={`text-4xl p-4 rounded-full hover:scale-110 transition-all ${
+            className={`text-xl p-4 rounded-full hover:scale-110 transition-all ${
               selectedMood?.id === mood.id ? 'ring-4 ring-black' : ''
             } ${mood.color}`}
           >
